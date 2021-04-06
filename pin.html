@@ -1,0 +1,45 @@
+<script>
+
+    const PIN   = "1234"
+    let pin     = ""
+    let tries   = 0
+    let balance = 100000.00
+    let money   = 50000 
+
+
+
+
+    while(true){
+
+        pin = prompt("Enter pin code :")
+        tries++
+     if( pin == PIN){
+        alert(`Access granted ! \n\n
+               Your balance : ${balance}MDL `)
+
+         money = +prompt("Max Withdraw 50000 MDL : ")
+          
+          if (money <= 50000){
+            alert("It's ok to withdraw")
+        } else if (money >= 50000) {
+            alert("You have exceeded the limit ")
+            let money = +prompt("Withdraw : ?")
+            balance -= money
+        alert(`Success ! \n\n  Your balance : ${balance}MDL`)       
+        break
+        } 
+          
+        
+          balance -= money
+        alert(`Success ! \n\n  Your balance : ${balance}MDL`)       
+        break
+     }else {
+        alert("Access denied !")
+     } if( tries == 3){
+         alert("Card bocked !")
+         break
+     }
+     
+    }
+
+</script>
